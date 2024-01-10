@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Casa Rural - Retiro Espiritual{% endblock %}</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <header class="cabecera">
+            <nav class="menu-navegacion">
+                <ul>
+                    <li><a href="{% url 'menu' %}">Inicio</a></li>
+                    <li><a href="{% url 'apartamentos' %}">Apartamentos</a></li>
+                    <li><a href="{% url 'actividades' %}">Actividades</a></li>
+                    <li><a href="{% url 'reservas' %}">Reservas</a></li>
+                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                    <li class="idioma-selector">
+                        <a href="{% url 'set_language' %}?lang=es">
+                            <img src="{% static 'media/images/base/spain_flag.png' %}" alt="ES" />
+                            Español
+                        </a>
+                    </li>
+                    <li class="idioma-selector">
+                        <a href="{% url 'set_language' %}?lang=en">
+                            <img src="{% static 'media/images/base/england_flag.png' %}" alt="EN" />
+                            English
+                        </a>
+                    </li>
+                    <li class="idioma-selector">
+                        <a href="{% url 'set_language' %}?lang=fr">
+                            <img src="{% static 'media/images/base/france_flag.png' %}" alt="FR" />
+                            Français
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Carrusel de imágenes con Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide" style="background-image:url('{% static 'media/images/base/slides_01.jpeg' %}');">
+                    <div class="slide-text">Mensaje sobre la imagen 1</div>
+                </div>
+                <div class="swiper-slide" style="background-image:url('{% static 'media/images/base/slides_02.jpeg' %}');">
+                    <div class="slide-text">Mensaje sobre la imagen 2</div>
+                </div>
+                <!-- ... más slides ... -->
+            </div>
+            <!-- Si necesitas navegación -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <main class="contenido">
+            {% block content %}
+            <!-- Contenido específico de la página -->
+            {% endblock %}
+        </main>
+
+        <footer class="pie-pagina">
+            Casa Rural Lardies Girón- Derechos reservados © {{ year }}
+        </footer>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script src="{% static 'js/base/swiper.js' %}"></script>
+</body>
+</html>
