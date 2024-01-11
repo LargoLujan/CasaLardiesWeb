@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-11 01:05+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\app\templates\base.html:10
+msgid "Casa Rural - Retiro Espiritual"
+msgstr "Casa Rural - Retiro Espiritual"
+
+#: .\app\templates\base.html:19
+msgid "Inicio"
+msgstr "Inicio"
+
+#: .\app\templates\base.html:20
+msgid "Apartamentos"
+msgstr "Apartamentos"
+
+#: .\app\templates\base.html:21
+msgid "Actividades"
+msgstr "Actividades"
+
+#: .\app\templates\base.html:22
+msgid "Reservas"
+msgstr "Reservas"
+
+#: .\app\templates\base.html:23
+msgid "Contacto"
+msgstr "Contacto"
+
+#: .\app\templates\base.html:51
+msgid "Mensaje sobre la imagen 1"
+msgstr "Mensaje sobre la imagen 1"
+
+#: .\app\templates\base.html:54
+msgid "Mensaje sobre la imagen 2"
+msgstr "Mensaje sobre la imagen 2"
+
+#: .\app\templates\base.html:71
+msgid "Casa Rural Lardies Girón- Derechos reservados"
+msgstr "Casa Rural Lardies Girón- Derechos reservados"
+
+#: .\app\templates\menu.html:12
+msgid "Sobre Nosotros"
+msgstr "Sobre Nosotros"
+
+#: .\app\templates\menu.html:13
+msgid "Bienvenido a la sección del menú de nuestro sitio de Turismo Rural."
+msgstr "Bienvenido a la sección del menú de nuestro sitio de Turismo Rural."
+
+#: .\app\templates\menu.html:14
+msgid ""
+"Casa Lardiés, ubicada en la pintoresca localidad de Puyarruego, se presenta "
+"como un destino de turismo rural encantador. Esta casa rural ofrece una "
+"experiencia única en un entorno natural, ideal para quienes buscan una "
+"escapada del ajetreo de la vida urbana. Rodeada de montañas y bosques, "
+"proporciona una atmósfera tranquila y relajante, perfecta para vacaciones "
+"familiares, escapadas románticas o estancias con amigos. La información "
+"sobre Casa Lardiés sugiere un enfoque en el confort y la autenticidad, "
+"brindando a los visitantes una verdadera experiencia de tranquilidad y "
+"conexión con la naturaleza."
+msgstr ""
+"Casa Lardiés, ubicada en la pintoresca localidad de Puyarruego, se presenta "
+"como un destino de turismo rural encantador. Esta casa rural ofrece una "
+"experiencia única en un entorno natural, ideal para quienes buscan una "
+"escapada del ajetreo de la vida urbana. Rodeada de montañas y bosques, "
+"proporciona una atmósfera tranquila y relajante, perfecta para vacaciones "
+"familiares, escapadas románticas o estancias con amigos. La información "
+"sobre Casa Lardiés sugiere un enfoque en el confort y la autenticidad, "
+"brindando a los visitantes una verdadera experiencia de tranquilidad y "
+"conexión con la naturaleza."
+
+#: .\app\templates\menu.html:15
+msgid ""
+"Para más detalles, te recomiendo visitar su página web o sitios asociados "
+"como "
+msgstr ""
+"Para más detalles, te recomiendo visitar su página web o sitios asociados "
+"como "

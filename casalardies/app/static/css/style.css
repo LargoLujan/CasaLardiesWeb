@@ -1,7 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif; /* Tipografía limpia y moderna */
     background-color: #f5f5f5; /* Color de fondo suave */
     color: #333; /* Color de texto principal */
 }
@@ -10,6 +10,23 @@ body, html {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.contenido-pagina {
+    padding: 20px;
+    text-align: center; /* Centrado del contenido */
+}
+
+.contenido-pagina h1 {
+    color: #4CAF50; /* Color para los títulos */
+    font-size: 2em; /* Tamaño más grande para los títulos */
+}
+
+.contenido-pagina p {
+    color: #555; /* Color para el texto */
+    line-height: 1.6; /* Espaciado para el texto */
+    max-width: 800px; /* Ancho máximo del texto */
+    margin: auto; /* Centrado automático del bloque de texto */
 }
 
 .cabecera {
@@ -25,7 +42,7 @@ body, html {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .menu-navegacion li {
@@ -54,9 +71,53 @@ body, html {
     text-align: center;
 }
 
+.language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    list-style: none;
+}
+
+.language-switcher ul {
+    padding: 0;
+    margin: 0;
+}
+
+.language-switcher li {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.language-switcher a img {
+    width: 24px; /* Tamaño de las imágenes de las banderas */
+    height: auto;
+}
+
+.language-button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin bordes */
+    color: #333; /* Color de texto como en el menú */
+    font-family: Arial, sans-serif; /* Tipografía */
+    cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
+    display: flex; /* Para alinear ícono y texto */
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 0 10px; /* Espaciado */
+}
+
+.language-button img {
+    margin-right: 5px; /* Espacio entre la bandera y el texto */
+    width: 20px; /* Tamaño de la bandera */
+    height: auto; /* Mantiene la proporción de la bandera */
+}
+
 @media screen and (max-width: 600px) {
-    .menu-navegacion li {
-        margin: 0 5px;
+    .contenido-pagina {
+        padding: 10px;
+    }
+
+    .language-switcher {
+        top: 5px;
+        right: 5px;
     }
 }
 
@@ -136,20 +197,49 @@ body, html {
 /* Estilos para el selector de idioma con banderas */
 .idioma-selector {
     margin-left: auto;
-    display: flex;
-    align-items: center;
+    position: relative;
 }
 
-.idioma-selector a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    padding: 0 10px;
+.idioma-selector select {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px; /* Ajusta el tamaño del círculo */
+    height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.idioma-selector img {
-    margin-right: 5px;
-    width: 20px; /* Tamaño de la imagen de la bandera */
-    height: auto;
+/* Específico para cada idioma */
+.idioma-selector select[data-lang="es"] {
+    background-image: url('{% static "media/images/base/spain_flag.png" %}');
+}
+
+.idioma-selector select[data-lang="en"] {
+    background-image: url('{% static "media/images/base/england_flag.png" %}');
+}
+
+.idioma-selector select[data-lang="fr"] {
+    background-image: url('{% static "media/images/base/france_flag.png" %}');
+}
+
+/* Estilos para ocultar flecha desplegable del select */
+.idioma-selector select::-ms-expand {
+    display: none;
+}
+
+/* Para navegadores que no sean IE */
+.idioma-selector select {
+    text-indent: 110%;
+    overflow: hidden;
+}
+
+/* Para Safari */
+.idioma-selector select::-webkit-calendar-picker-indicator {
+    display: none;
 }

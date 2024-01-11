@@ -21,23 +21,15 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('menu/', views.menu, name='menu'),
-    path('apartamentos/', views.apartamentos, name='apartamentos'),
-    path('actividades/', views.actividades, name='actividades'),
-    path('reservas/', views.reservas, name='reservas'),
-    path('contacto/', views.contacto, name='contacto'),
-    path('i18n/', include('django.conf.urls.i18n')),
-
+    path('i18n/', include('django.conf.urls.i18n')),  # URL para el cambio de idioma
 ]
 
+# URLs que cambiarán según el idioma seleccionado
 urlpatterns += i18n_patterns(
-    # Tus URL que deben traducirse aquí...
     path('', views.home, name='home'),
     path('menu/', views.menu, name='menu'),
     path('apartamentos/', views.apartamentos, name='apartamentos'),
     path('actividades/', views.actividades, name='actividades'),
     path('reservas/', views.reservas, name='reservas'),
     path('contacto/', views.contacto, name='contacto'),
-    # ... y así sucesivamente para todas tus rutas que deben tener versiones traducidas
 )

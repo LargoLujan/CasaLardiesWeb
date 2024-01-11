@@ -1,10 +1,29 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% load i18n %}
+
 {% block title %}Menú - Turismo Rural{% endblock %}
 
 {% block content %}
     <!-- Contenido específico de la página de menú -->
-    <h1>Sobre Nosotros</h1>
-    <p>Bienvenido a la sección del menú de nuestro sitio de Turismo Rural.</p>
+    <div class="contenido-pagina">
+        <h1>{% trans "Sobre Nosotros" %}</h1>
+        <p>{% trans "Bienvenido a la sección del menú de nuestro sitio de Turismo Rural." %}</p>
+        <p>{% trans "Casa Lardiés, ubicada en la pintoresca localidad de Puyarruego, se presenta como un destino de turismo rural encantador. Esta casa rural ofrece una experiencia única en un entorno natural, ideal para quienes buscan una escapada del ajetreo de la vida urbana. Rodeada de montañas y bosques, proporciona una atmósfera tranquila y relajante, perfecta para vacaciones familiares, escapadas románticas o estancias con amigos. La información sobre Casa Lardiés sugiere un enfoque en el confort y la autenticidad, brindando a los visitantes una verdadera experiencia de tranquilidad y conexión con la naturaleza." %}</p>
+        <p>{% trans "Para más detalles, te recomiendo visitar su página web o sitios asociados como " %}<a href="https://www.escapadarural.com/casa-rural/huesca/casa-lardies" target="_blank">EscapadaRural</a>.</p>
+    </div>
     <!-- Aquí puedes añadir más contenido específico de la página de menú -->
 {% endblock %}
+
+{% block lang_switcher %}
+    <div class="language-switcher">
+        <ul>
+            <li><a href="{% url 'set_language' %}?language=es"><img src="{% static 'media/images/base/spain_flag.png' %}" alt="Español"></a></li>
+            <li><a href="{% url 'set_language' %}?language=en"><img src="{% static 'media/images/base/england_flag.png' %}" alt="English"></a></li>
+            <li><a href="{% url 'set_language' %}?language=fr"><img src="{% static 'media/images/base/france_flag.png' %}" alt="Français"></a></li>
+        </ul>
+    </div>
+{% endblock %}
+
