@@ -1,9 +1,9 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', Arial, sans-serif; /* Tipografía limpia y moderna */
-    background-color: #f5f5f5; /* Color de fondo suave */
-    color: #333; /* Color de texto principal */
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 .contenedor-principal {
@@ -14,27 +14,27 @@ body, html {
 
 .contenido-pagina {
     padding: 20px;
-    text-align: center; /* Centrado del contenido */
+    text-align: center;
 }
 
 .contenido-pagina h1 {
-    color: #4CAF50; /* Color para los títulos */
-    font-size: 2em; /* Tamaño más grande para los títulos */
+    color: #4CAF50;
+    font-size: 2em;
 }
 
 .contenido-pagina p {
-    color: #555; /* Color para el texto */
-    line-height: 1.6; /* Espaciado para el texto */
-    max-width: 800px; /* Ancho máximo del texto */
-    margin: auto; /* Centrado automático del bloque de texto */
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: auto;
 }
 
 .cabecera {
-    background-color: #eaeaea; /* Color de fondo para la cabecera */
+    background-color: #eaeaea;
     padding: 10px 0;
     text-align: center;
     position: relative;
-    z-index: 5; /* Menos que el z-index de los botones de swiper para que estén debajo de ellos */
+    z-index: 5;
 }
 
 .menu-navegacion ul {
@@ -56,13 +56,13 @@ body, html {
 }
 
 .menu-navegacion a:hover {
-    color: #4CAF50; /* Color de enlace al pasar el ratón */
+    color: #4CAF50;
 }
 
 .contenido {
     flex: 1;
     padding: 20px;
-    text-align: center; /* Centrado del contenido */
+    text-align: center;
 }
 
 .pie-pagina {
@@ -89,47 +89,101 @@ body, html {
 }
 
 .language-switcher a img {
-    width: 24px; /* Tamaño de las imágenes de las banderas */
+    width: 24px;
     height: auto;
 }
 
 .language-button {
-    background-color: transparent; /* Fondo transparente */
-    border: none; /* Sin bordes */
-    color: #333; /* Color de texto como en el menú */
-    font-family: Arial, sans-serif; /* Tipografía */
-    cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
-    display: flex; /* Para alinear ícono y texto */
-    align-items: center; /* Centra verticalmente el contenido */
-    padding: 0 10px; /* Espaciado */
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
 }
 
 .language-button img {
-    margin-right: 5px; /* Espacio entre la bandera y el texto */
-    width: 20px; /* Tamaño de la bandera */
-    height: auto; /* Mantiene la proporción de la bandera */
+    margin-right: 5px;
+    width: 20px;
+    height: auto;
 }
 
-@media screen and (max-width: 600px) {
+/* Añadido: Media Queries para Tabletas */
+@media screen and (max-width: 768px) {
+    .contenido-pagina h1 {
+        font-size: 1.5em;
+    }
+
+    .menu-navegacion ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-navegacion li {
+        margin: 5px 0;
+    }
+
+    .swiper-container {
+        height: 40vh;
+    }
+}
+
+/* Añadido: Media Queries para Móviles */
+@media screen and (max-width: 480px) {
     .contenido-pagina {
         padding: 10px;
     }
 
+    .contenido-pagina h1 {
+        font-size: 1.2em;
+    }
+
+    .cabecera {
+        text-align: left;
+        padding: 5px 10px;
+    }
+
+    .menu-navegacion ul {
+        display: none; /* Ocultar menú por defecto en móviles */
+    }
+
+    /* Añadir HTML y JavaScript para manejar este menú */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .swiper-container {
+        height: 30vh;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        width: 40px;
+        height: 40px;
+    }
+
     .language-switcher {
-        top: 5px;
-        right: 5px;
+        top: 3px;
+        right: 3px;
+    }
+
+    .language-button img {
+        width: 18px;
     }
 }
 
+/* Estilos existentes para Swiper, etc. aquí debajo */
 .swiper-container {
     width: 100%;
-    height: 50vh; /* Reducido de 60vh para disminuir la altura del carrusel */
+    height: 50vh;
     position: relative;
-    overflow: hidden; /* Previene el desbordamiento del contenido */
-    z-index: 2; /* Asegúrate de que el carrusel esté encima de los botones */
+    overflow: hidden;
+    z-index: 2;
 }
 
-/* Estilos para el texto dentro del slide de Swiper */
+/* ... otros estilos para swiper ... */
 .slide-text {
     position: absolute;
     width: 100%;
@@ -230,4 +284,39 @@ body, html {
 /* Para Safari */
 .idioma-selector select::-webkit-calendar-picker-indicator {
     display: none;
+}
+
+/* Estilos para la sección "Sobre Nosotros" */
+.sobre-nosotros {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.imagen-sobre-nosotros img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.texto-sobre-nosotros {
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+/* Estilos para el carrusel de imágenes */
+.carrusel-imagenes {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.swiper-slide {
+    text-align: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }

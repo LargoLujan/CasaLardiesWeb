@@ -1,29 +1,58 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
 {% load i18n %}
 
-{% block title %}Menú - Turismo Rural{% endblock %}
+{% block title %}{% trans "Menú - Turismo Rural" %}{% endblock %}
 
 {% block content %}
-    <!-- Contenido específico de la página de menú -->
-    <div class="contenido-pagina">
+<!-- Sobre Nosotros -->
+<div class="sobre-nosotros">
+    <div class="imagen-sobre-nosotros">
+        <img src="{% static 'path/to/your/descriptive-image.jpg' %}" alt="{% trans 'Descripción de la imagen' %}">
+    </div>
+    <div class="texto-sobre-nosotros">
         <h1>{% trans "Sobre Nosotros" %}</h1>
         <p>{% trans "Bienvenido a la sección del menú de nuestro sitio de Turismo Rural." %}</p>
         <p>{% trans "Casa Lardiés, ubicada en la pintoresca localidad de Puyarruego, se presenta como un destino de turismo rural encantador. Esta casa rural ofrece una experiencia única en un entorno natural, ideal para quienes buscan una escapada del ajetreo de la vida urbana. Rodeada de montañas y bosques, proporciona una atmósfera tranquila y relajante, perfecta para vacaciones familiares, escapadas románticas o estancias con amigos. La información sobre Casa Lardiés sugiere un enfoque en el confort y la autenticidad, brindando a los visitantes una verdadera experiencia de tranquilidad y conexión con la naturaleza." %}</p>
         <p>{% trans "Para más detalles, te recomiendo visitar su página web o sitios asociados como " %}<a href="https://www.escapadarural.com/casa-rural/huesca/casa-lardies" target="_blank">EscapadaRural</a>.</p>
     </div>
-    <!-- Aquí puedes añadir más contenido específico de la página de menú -->
-{% endblock %}
+</div>
 
-{% block lang_switcher %}
-    <div class="language-switcher">
-        <ul>
-            <li><a href="{% url 'set_language' %}?language=es"><img src="{% static 'media/images/base/spain_flag.png' %}" alt="Español"></a></li>
-            <li><a href="{% url 'set_language' %}?language=en"><img src="{% static 'media/images/base/england_flag.png' %}" alt="English"></a></li>
-            <li><a href="{% url 'set_language' %}?language=fr"><img src="{% static 'media/images/base/france_flag.png' %}" alt="Français"></a></li>
-        </ul>
+<!-- Carrusel de imágenes -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <!-- Añade tus imágenes aquí -->
+        {% for i in "1234567890"|make_list %}
+        <div class="swiper-slide">
+            <img src="{% static 'path/to/your/image' %}.jpg" alt="{% trans 'Imagen' %} {{ forloop.counter }}">
+        </div>
+        {% endfor %}
     </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+<!-- Más contenido específico de la página de menú aquí si es necesario -->
+
 {% endblock %}
 
+{% block extra_js %}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+{% endblock %}
