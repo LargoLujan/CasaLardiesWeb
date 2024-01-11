@@ -215,18 +215,6 @@ body, html {
     background-size: cover;
 }
 
-/* Específico para cada idioma */
-.idioma-selector select[data-lang="es"] {
-    background-image: url('{% static "media/images/base/spain_flag.png" %}');
-}
-
-.idioma-selector select[data-lang="en"] {
-    background-image: url('{% static "media/images/base/england_flag.png" %}');
-}
-
-.idioma-selector select[data-lang="fr"] {
-    background-image: url('{% static "media/images/base/france_flag.png" %}');
-}
 
 /* Estilos para ocultar flecha desplegable del select */
 .idioma-selector select::-ms-expand {
