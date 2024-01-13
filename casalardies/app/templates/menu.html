@@ -24,8 +24,9 @@
     <div class="swiper-wrapper">
         <!-- Añade tus imágenes aquí -->
         {% for i in "1234567890"|make_list %}
+
         <div class="swiper-slide">
-            <img src="{% static 'path/to/your/image' %}.jpg" alt="{% trans 'Imagen' %} {{ forloop.counter }}">
+            <img src="{% static 'media/base/images' %}.jpeg" alt="{% trans 'Imagen' %} {{ forloop.counter }}">
         </div>
         {% endfor %}
     </div>
